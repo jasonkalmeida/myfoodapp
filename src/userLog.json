@@ -1,0 +1,62 @@
+{
+    "log": [{
+      "id": 4,
+      "date": "September 21, 2019",
+      "breakfast": [{
+        "name": "Homestyle Waffles",
+        "source": "Ego",
+        "nutrition": {
+          "calories": 180,
+          "totalFat": 6,
+          "cholesterol": 5,
+          "sodium": 360,
+          "potasium": 55,
+          "carbs": 27,
+          "fiber": 1,
+          "sugars": 2,
+          "protein": 4,
+          "vita": 20,
+          "vitc": 0,
+          "calcium": 25,
+          "iron": 25
+        }
+      }],
+      "lunch":[{
+        "name": "Quarter Pounder",
+        "source": "McDonald's",
+        "nutrition": {
+          "calories": 520,
+          "totalFat": 26,
+          "cholesterol": 95,
+          "sodium": 1100,
+          "potasium": 0,
+          "carbs": 41,
+          "fiber": 3,
+          "sugars": 10,
+          "protein": 30,
+          "vita": 10,
+          "vitc": 2,
+          "calcium": 30,
+          "iron": 25
+        }
+      },{
+        "name": "Small French Fries",
+        "source": "McDonald's",
+        "nutrition": {
+          "calories": 230,
+          "totalFat": 11,
+          "cholesterol": 0,
+          "sodium": 160,
+          "potasium": 0,
+          "carbs": 29,
+          "fiber": 3,
+          "sugars": 3,
+          "protein": 3,
+          "vita": 0,
+          "vitc": 8,
+          "calcium": 2,
+          "iron": 4
+        }
+      }]
+    }]
+}
