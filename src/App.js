@@ -1,56 +1,66 @@
 import React, { useState, useEffect} from 'react';
+import LogList from './LogList';
+import Search from './Search';
 import './App.scss';
 
-function MealList(props){
-  const items = props.meals;
-  console.log(items);
-  const listItems = items.map((item, index) => {
-    return(
-      <li key={index}>{item["name"]}</li>
-    )
-  });
-
-
-  return (
-    <div className={props.mealName.toLowerCase()+"List"}>
-      <h3>{props.mealName}</h3>
-      <ul>{listItems}</ul>
-    </div>
-  );
-}
-
-function LogList(props){
-  return(
-    <div className="loglist">
-      <MealList mealName="Breakfast" meals={props.meals["breakfast"]} />
-      <MealList mealName="Lunch" meals={props.meals["lunch"]} />
-    </div>
-  );
-
-
-}
 
 function App() {
 
-  const [log, setLog] = useState(null);
+  const [date, setDate] = useState(null);
+  const [calories, setCalories] = useState(null);
+  const [breakfast, setBreakfast] = useState([]);
+  const [lunch, setLunch] = useState([]);
+  const [dinner, setDinner] = useState([]);
 
   useEffect(() => {
     var data = require('./userLog.json');
-    setLog(data["log"]);
+    setDate(data["date"]);
+    setCalories(data["calories"]);
+    setBreakfast(data["breakfast"]);
+    setLunch(data["lunch"]);
+    setDinner(data["dinner"]);
   }, []);
 
-  if(log === null){
+  useEffect(() => {
+    let sum = 0;
+    breakfast.forEach((item) => {
+      sum+=item["nutrition"]["calories"];
+    })
+    lunch.forEach((item) => {
+      sum+=item["nutrition"]["calories"];
+    })
+    dinner.forEach((item) => {
+      sum+=item["nutrition"]["calories"];
+    })
+
+    setCalories(sum);
+  }, [breakfast, lunch, dinner]);
+
+  if(date === null){
     return(null);
   } else {
     return (
       <div className="App">
-        <h1>{log[0]["date"]}</h1>
-        <LogList meals={log[0]}/>
+
+        <LogList
+        meals={{
+          "breakfast": breakfast,
+          "lunch": lunch,
+          "dinner": dinner
+        }}
+        date={date}
+        calories={calories}
+        setLog={{
+          "breakfast": (update) => setBreakfast(update),
+          "lunch": (update) => setLunch(update),
+          "dinner": (update) => setDinner(update)
+        }}/>
+
+        <Search meal={breakfast} setLog={(update) => setBreakfast(update)}/>
+
       </div>
     );
   }
-
-
 }
 
 export default App;

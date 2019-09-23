@@ -1,7 +1,7 @@
 {
-    "log": [{
       "id": 4,
       "date": "September 21, 2019",
+      "calories": 930,
       "breakfast": [{
         "name": "Homestyle Waffles",
         "source": "Ego",
@@ -57,6 +57,6 @@
           "calcium": 2,
           "iron": 4
         }
-      }]
-    }]
+      }],
+      "dinner":[]
 }
