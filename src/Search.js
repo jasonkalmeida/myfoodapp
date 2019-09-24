@@ -12,7 +12,7 @@ function Search(props){
       <FoodDatabase search={currentSearch} meal={props.meal} addFood={(item) => {
         //console.log("In here");
         //console.log(props.meal);
-        return props.setLog(props.meal.concat([item]));
+        return props.setLog[props.activeSearch](props.meal[props.activeSearch].concat([item]));
       }}/>
     </div>
   );

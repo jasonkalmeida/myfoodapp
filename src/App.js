@@ -60,7 +60,17 @@ function App() {
         />
         {
           activeSearch !== null &&
-          <Search meal={breakfast} setLog={(update) => setBreakfast(update)}/>
+          <Search meal={{
+              "breakfast": breakfast,
+              "lunch": lunch,
+              "dinner": dinner
+            }}
+            activeSearch={activeSearch}
+            setLog={{
+              "breakfast": (update) => setBreakfast(update),
+              "lunch": (update) => setLunch(update),
+              "dinner": (update) => setDinner(update)
+            }}/>
 
         }
 

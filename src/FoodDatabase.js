@@ -9,7 +9,22 @@ function FoodDatabase(props){
   console.log(props.meal)
 
   function filterSearch(item){
-    return (item["name"].toLowerCase().indexOf(props.search.toLowerCase()) === 0 || item["source"].toLowerCase().indexOf(props.search.toLowerCase()) === 0)
+
+    var ret = false;
+
+    item["name"].split(" ").forEach((word) => {
+      if(word.toLowerCase().indexOf(props.search.toLowerCase()) === 0){
+        ret = true;
+      }
+    });
+
+    item["source"].split(" ").forEach((word) => {
+      if(word.toLowerCase().indexOf(props.search.toLowerCase()) === 0){
+        ret = true;
+      }
+    });
+
+    return (ret);
   }
 
   function handleClick(item){
