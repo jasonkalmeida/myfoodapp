@@ -6,12 +6,14 @@ import './App.scss';
 
 function App() {
 
+  //Application's overall state
   const [date, setDate] = useState(null);
   const [calories, setCalories] = useState(null);
   const [breakfast, setBreakfast] = useState([]);
   const [lunch, setLunch] = useState([]);
   const [dinner, setDinner] = useState([]);
 
+  //Setting logged in state
   useEffect(() => {
     var data = require('./userLog.json');
     setDate(data["date"]);
@@ -21,10 +23,13 @@ function App() {
     setDinner(data["dinner"]);
   }, []);
 
+  //When meals are updated, update the calorie count and push updates to DB
   useEffect(() => {
     let sum = 0;
     breakfast.forEach((item) => {
       sum+=item["nutrition"]["calories"];
+      console.log(item["name"]);
+      console.log(item["nutrition"]["calories"]);
     })
     lunch.forEach((item) => {
       sum+=item["nutrition"]["calories"];

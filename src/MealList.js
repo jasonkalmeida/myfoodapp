@@ -24,7 +24,7 @@ function MealList(props){
   const items = props.meal;
   const listItems = items.map((item, index) => {
     return(
-      <li key={index}><ItemCard item={item} expanded={false} actionCall={(item) => removeMeal(index)}/></li>
+      <div key={index}><ItemCard item={item} expanded={false} actionCall={(item) => removeMeal(index)} actionLabel="REMOVE"/></div>
     )
   });
 
@@ -32,9 +32,9 @@ function MealList(props){
   return (
     <div className={props.mealName+"List"}>
       <h3>{props.mealName}</h3>
-      <ul>{listItems}
-      <li onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "Done" : "Add Item"}</li>
-      </ul>
+      <div>{listItems}
+      <div onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "Done" : "Add Item"}</div>
+      </div>
       {
         activeSearch &&
         <Search meal={props.meal} setLog={(item) => addMeal(item)}/>

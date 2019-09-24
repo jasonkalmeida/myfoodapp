@@ -11,7 +11,7 @@ function Search(props){
   return(
     <div className="searchArea">
       <SearchBar currentSearch={currentSearch} updateSearch={(update) => setCurrentSearch(update)}/>
-      <FoodDatabase search={currentSearch} meal={props.meal} addFood={(item) => props.setLog(item)}/>
+      <FoodDatabase search={currentSearch} meal={props.meal} addFood={(item) => props.setLog(item)} updateSearch={(update) => setCurrentSearch(update)}/>
     </div>
   );
 }

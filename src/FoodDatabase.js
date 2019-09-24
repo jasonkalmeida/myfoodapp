@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
+import CreateCard from './CreateCard';
 
 function FoodDatabase(props){
 
@@ -38,7 +39,7 @@ function FoodDatabase(props){
   //This is to re-render the list of items and their props as needed
   useEffect(() => {
     setFoodItems(searchResults.filter(filterSearch).map((item, index) =>
-      <li key={index}><ItemCard item={item} expanded={false} actionCall={(item) => props.addFood(item)}/></li>
+      <div key={index}><ItemCard item={item} expanded={false} actionCall={(item) => props.addFood(item)} actionLabel="ADD"/></div>
     ));
   }, [props.search, searchResults, props.meal])
 
@@ -48,7 +49,9 @@ function FoodDatabase(props){
     return null;
   } else {
     return(
-      <ul>{foodItems}</ul>
+      <div>{foodItems}
+      <div><CreateCard search={props.search} actionCall={(item) => props.addFood(item)} actionLabel="ADD NEW ITEM" updateSearch={(value) => props.updateSearch(value)}/></div>
+      </div>
     );
   }
 

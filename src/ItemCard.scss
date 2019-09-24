@@ -1,0 +1,64 @@
+.itemCard, .createCard
+{
+  max-width: 200px;
+
+  .mainCard
+  {
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+
+    p
+    {
+      margin: 0px;
+
+    }
+  }
+
+  .mainCard:hover
+  {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .subCard
+  {
+    //max-height: 0;
+    //overflow: hidden;
+    //transition: max-height 0.2s ease-out;
+    //display: flex;
+    //flex-direction: column;
+    //flex-wrap: wrap;
+
+    p
+    {
+      display: block;
+    }
+
+    .addCard
+    {
+      width: 150px;
+      height: 50px;
+      margin:auto;
+      p
+      {
+        color: blue;
+        text-align: center;
+      }
+    }
+
+    .addCard:hover
+    {
+      background-color:white;
+
+      p
+      {
+        color:blue;
+      }
+    }
+
+  }
+
+}
