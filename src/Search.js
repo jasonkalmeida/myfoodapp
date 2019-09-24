@@ -3,17 +3,15 @@ import SearchBar from './SearchBar';
 import FoodDatabase from './FoodDatabase';
 
 function Search(props){
+
+  //Stores the current search query - updated upon keystroke
   const [currentSearch, setCurrentSearch] = useState('');
 
 
   return(
     <div className="searchArea">
       <SearchBar currentSearch={currentSearch} updateSearch={(update) => setCurrentSearch(update)}/>
-      <FoodDatabase search={currentSearch} meal={props.meal} addFood={(item) => {
-        //console.log("In here");
-        //console.log(props.meal);
-        return props.setLog[props.activeSearch](props.meal[props.activeSearch].concat([item]));
-      }}/>
+      <FoodDatabase search={currentSearch} meal={props.meal} addFood={(item) => props.setLog(item)}/>
     </div>
   );
 }

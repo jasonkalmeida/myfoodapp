@@ -3,11 +3,13 @@ import ItemCard from './ItemCard';
 
 function FoodDatabase(props){
 
+  //searchResults stores the immediate response of the db
   const [searchResults, setSearchResults] = useState([]);
+  //foodItems stores the rendered versions of searchResults
   const [foodItems, setFoodItems] = useState([]);
-  console.log("Rendered fooddb");
-  console.log(props.meal)
 
+
+  //This is the primitive frontend search I created to filter through the dummy data
   function filterSearch(item){
 
     var ret = false;
@@ -17,7 +19,6 @@ function FoodDatabase(props){
         ret = true;
       }
     });
-
     item["source"].split(" ").forEach((word) => {
       if(word.toLowerCase().indexOf(props.search.toLowerCase()) === 0){
         ret = true;
@@ -27,32 +28,20 @@ function FoodDatabase(props){
     return (ret);
   }
 
-  function handleClick(item){
-    //console.log(`Adding ${item}`);
-    //console.log(item);
-    //console.log("test deep")
-    //console.log(props.meal);
-    props.addFood(item);
-  }
 
+  //This would be ths section where I make API search calls
   useEffect(() => {
-      //This would be ths section where I make API search calls
       let res = require('./foodDB.json');
       setSearchResults(res["items"]);
   }, [props.search]);
 
+  //This is to re-render the list of items and their props as needed
   useEffect(() => {
-    //console.log(searchResults.filter(filterSearch));
     setFoodItems(searchResults.filter(filterSearch).map((item, index) =>
-      <li key={index}><ItemCard item={item} expanded={false} handleClick={(item) => {
-        handleClick(item);
-        //console.log(props.meal);
-      }}/></li>
+      <li key={index}><ItemCard item={item} expanded={false} actionCall={(item) => props.addFood(item)}/></li>
     ));
-
   }, [props.search, searchResults, props.meal])
 
-  //Only updates when props.search is updated
 
 
   if(props.search === ''){

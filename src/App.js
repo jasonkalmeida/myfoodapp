@@ -11,7 +11,6 @@ function App() {
   const [breakfast, setBreakfast] = useState([]);
   const [lunch, setLunch] = useState([]);
   const [dinner, setDinner] = useState([]);
-  const [activeSearch, setActiveSearch] = useState(null);
 
   useEffect(() => {
     var data = require('./userLog.json');
@@ -35,6 +34,7 @@ function App() {
     })
 
     setCalories(sum);
+    //Would make POST request here to update user's log in DB
   }, [breakfast, lunch, dinner]);
 
   if(date === null){
@@ -56,23 +56,7 @@ function App() {
           "lunch": (update) => setLunch(update),
           "dinner": (update) => setDinner(update)
         }}
-        setActiveSearch={(update) => setActiveSearch(update)}
         />
-        {
-          activeSearch !== null &&
-          <Search meal={{
-              "breakfast": breakfast,
-              "lunch": lunch,
-              "dinner": dinner
-            }}
-            activeSearch={activeSearch}
-            setLog={{
-              "breakfast": (update) => setBreakfast(update),
-              "lunch": (update) => setLunch(update),
-              "dinner": (update) => setDinner(update)
-            }}/>
-
-        }
 
 
       </div>
