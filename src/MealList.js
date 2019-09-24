@@ -31,9 +31,9 @@ function MealList(props){
 
   return (
     <div className={props.mealName+"List"}>
-      <h3>{props.mealName}</h3>
+      <h2>{props.mealName}</h2>
       <div>{listItems}
-      <div onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "Done" : "Add Item"}</div>
+      <div className="searchControl" onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "x" : "+"}</div>
       </div>
       {
         activeSearch &&

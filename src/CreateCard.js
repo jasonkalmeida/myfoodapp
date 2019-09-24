@@ -27,7 +27,7 @@ function CreateCard(props){
     if (content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
-      content.style.maxHeight = 250 + "px";
+      content.style.maxHeight = content.scrollHeight + "px";
     }
   }
 
@@ -62,20 +62,20 @@ function CreateCard(props){
     </div>
     <div className="subCard">
 
-      <input className="createInput" type="text" value={props.search} onChange={(event) => props.updateSearch(event.target.value)} placeholder="Name.."></input>
-      <input className="createInput" type="text" value={calories} onChange={(event) => setCalories(event.target.value)} placeholder="Calories.."></input>
-      <input className="createInput" type="text" value={totalFat} onChange={(event) => setTotalFat(event.target.value)} placeholder="Total Fat.."></input>
-      <input className="createInput" type="text" value={cholesterol} onChange={(event) => setCholesterol(event.target.value)} placeholder="Cholesterol.."></input>
-      <input className="createInput" type="text" value={sodium} onChange={(event) => setSodium(event.target.value)} placeholder="Sodium.."></input>
-      <input className="createInput" type="text" value={potasium} onChange={(event) => setPotasium(event.target.value)} placeholder="Potasium.."></input>
-      <input className="createInput" type="text" value={carbs} onChange={(event) => setCarbs(event.target.value)} placeholder="Carbs.."></input>
-      <input className="createInput" type="text" value={fiber} onChange={(event) => setFiber(event.target.value)} placeholder="Fiber.."></input>
-      <input className="createInput" type="text" value={sugars} onChange={(event) => setSugar(event.target.value)} placeholder="Sugar.."></input>
-      <input className="createInput" type="text" value={protein} onChange={(event) => setProtein(event.target.value)} placeholder="Protein.."></input>
-      <input className="createInput" type="text" value={vita} onChange={(event) => setVita(event.target.value)} placeholder="Vitamin A.."></input>
-      <input className="createInput" type="text" value={vitc} onChange={(event) => setVitc(event.target.value)} placeholder="Vitamin C.."></input>
-      <input className="createInput" type="text" value={calcium} onChange={(event) => setCalcium(event.target.value)} placeholder="Calcium.."></input>
-      <input className="createInput" type="text" value={iron} onChange={(event) => setIron(event.target.value)} placeholder="Iron.."></input>
+        <input className="createInput" type="text" value={props.search} onChange={(event) => props.updateSearch(event.target.value)} placeholder="Name.."></input>
+        <input className="createInput" type="text" value={calories} onChange={(event) => setCalories(event.target.value)} placeholder="Calories.."></input>
+        <input className="createInput" type="text" value={totalFat} onChange={(event) => setTotalFat(event.target.value)} placeholder="Total Fat.."></input>
+        <input className="createInput" type="text" value={cholesterol} onChange={(event) => setCholesterol(event.target.value)} placeholder="Cholesterol.."></input>
+        <input className="createInput" type="text" value={sodium} onChange={(event) => setSodium(event.target.value)} placeholder="Sodium.."></input>
+        <input className="createInput" type="text" value={potasium} onChange={(event) => setPotasium(event.target.value)} placeholder="Potasium.."></input>
+        <input className="createInput" type="text" value={carbs} onChange={(event) => setCarbs(event.target.value)} placeholder="Carbs.."></input>
+        <input className="createInput" type="text" value={fiber} onChange={(event) => setFiber(event.target.value)} placeholder="Fiber.."></input>
+        <input className="createInput" type="text" value={sugars} onChange={(event) => setSugar(event.target.value)} placeholder="Sugar.."></input>
+        <input className="createInput" type="text" value={protein} onChange={(event) => setProtein(event.target.value)} placeholder="Protein.."></input>
+        <input className="createInput" type="text" value={vita} onChange={(event) => setVita(event.target.value)} placeholder="Vitamin A.."></input>
+        <input className="createInput" type="text" value={vitc} onChange={(event) => setVitc(event.target.value)} placeholder="Vitamin C.."></input>
+        <input className="createInput" type="text" value={calcium} onChange={(event) => setCalcium(event.target.value)} placeholder="Calcium.."></input>
+        <input className="createInput" type="text" value={iron} onChange={(event) => setIron(event.target.value)} placeholder="Iron.."></input>
 
       <div className="addCard" onClick={() => addNewItem()}><p>{props.actionLabel}</p></div>
     </div>

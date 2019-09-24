@@ -1,7 +1,6 @@
 .itemCard, .createCard
 {
-  max-width: 200px;
-
+  //max-width: 200px;
   .mainCard
   {
     height: 50px;
@@ -25,22 +24,28 @@
 
   .subCard
   {
-    //max-height: 0;
-    //overflow: hidden;
-    //transition: max-height 0.2s ease-out;
-    //display: flex;
-    //flex-direction: column;
-    //flex-wrap: wrap;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 
+
+    .nutritionSection
+    {
+      -webkit-column-count: 2; /* Old Chrome, Safari and Opera */
+      -moz-column-count: 2; /* Old Firefox */
+      column-count: 2;
+    }
     p
     {
+      margin: 0;
       display: block;
+      font-size: 14px;
     }
 
     .addCard
     {
-      width: 150px;
-      height: 50px;
+      //width: 150px;
+      //height: 50px;
       margin:auto;
       p
       {
