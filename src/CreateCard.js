@@ -34,7 +34,7 @@ function CreateCard(props){
   function addNewItem(){
     var newItem = {
       "name": props.search.charAt(0).toUpperCase() + props.search.substring(1).toLowerCase(),
-      "source": "User Create",
+      "source": "User Created",
       "nutrition": {
         "calories": calories !== '' ? parseInt(calories) : 0,
         "totalFat": totalFat !== '' ? parseInt(totalFat) : 0,
@@ -52,7 +52,7 @@ function CreateCard(props){
       }
 
     }
-    props.actionCall(newItem)
+    props.actionCall(newItem);
   }
 
   return(
@@ -78,7 +78,7 @@ function CreateCard(props){
         <input className="createInput" type="text" value={iron} onChange={(event) => setIron(event.target.value)} placeholder="Iron (%)..."></input>
 
         { props.actionLabel &&
-            <div className="cardAction" onClick={() => props.actionCall(props.item)}><p className={props.actionStyle}>{props.actionLabel}</p></div>
+            <div className="cardAction" onClick={() => addNewItem()}><p className={props.actionStyle}>{props.actionLabel}</p></div>
         }
     </div>
   </div>

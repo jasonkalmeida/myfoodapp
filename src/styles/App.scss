@@ -22,6 +22,21 @@ body{
   min-height: 100%;
   padding-bottom: 100%;
 
+  #appTitle, #titleSubtext
+  {
+    margin: 0px;
+    text-align: center;
+  }
+
+  #appTitle
+  {
+    color: $brand-main;
+  }
+
+  #titleSubtext
+  {
+    font-style: italic;
+  }
 
 
 }

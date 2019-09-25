@@ -12,6 +12,7 @@ function App() {
   const [breakfast, setBreakfast] = useState([]);
   const [lunch, setLunch] = useState([]);
   const [dinner, setDinner] = useState([]);
+  const [nutrition, setNutrition] = useState({});
 
   //Setting logged in state
   useEffect(() => {
@@ -26,18 +27,42 @@ function App() {
   //When meals are updated, update the calorie count and push updates to DB
   useEffect(() => {
     let sum = 0;
+    var nutri = {
+      "totalFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "potasium": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugars": 0,
+      "protein": 0,
+      "vita": 0,
+      "vitc": 0,
+      "calcium": 0,
+      "iron": 0
+    }
+
     breakfast.forEach((item) => {
       sum+=item["nutrition"]["calories"];
-      console.log(item["name"]);
-      console.log(item["nutrition"]["calories"]);
+
+      for(var key in nutri){
+        nutri[key] += item["nutrition"][key];
+      }
     })
     lunch.forEach((item) => {
       sum+=item["nutrition"]["calories"];
+      for(var key in nutri){
+        nutri[key] += item["nutrition"][key];
+      }
     })
     dinner.forEach((item) => {
       sum+=item["nutrition"]["calories"];
+      for(var key in nutri){
+        nutri[key] += item["nutrition"][key];
+      }
     })
-
+ 
+    setNutrition(nutri);
     setCalories(sum);
     //Would make POST request here to update user's log in DB
   }, [breakfast, lunch, dinner]);
@@ -47,6 +72,9 @@ function App() {
   } else {
     return (
       <div className="App">
+
+        <h3 id="appTitle">MyFoodDiary</h3>
+        <p id="titleSubtext">for</p>
 
         <LogList
         meals={{
@@ -61,6 +89,7 @@ function App() {
           "lunch": (update) => setLunch(update),
           "dinner": (update) => setDinner(update)
         }}
+        nutrition={nutrition}
         />
 
 

@@ -1,0 +1,99 @@
+@import './colors.scss';
+
+.nutritionSummary
+{
+  text-align: center;
+
+  .nutritionTitle
+  {
+    color:$brand-white;
+    background-color: $brand-dark;
+    width: 200px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    @media only screen and (max-width: 768px) {
+      padding-top: 2%;
+      padding-bottom: 2%;
+    }
+
+  }
+
+  .active
+  {
+    overflow: visible !important;
+    .nutritionDetails
+    {
+      padding-bottom: 5%;
+    }
+
+  }
+
+  .collapsableSummary
+  {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: $brand-dark;
+    color: $brand-white;
+    box-shadow: inset 0 8px 16px 0 rgba(0,0,0,0.6);
+
+
+    .arrow-up
+    {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $brand-dark;
+      position: relative;
+      top: -10px;
+      margin: auto;
+      z-index: 9;
+      box-shadow: inset 0 8px 16px 0 rgba(0,0,0,0.6);
+
+    }
+
+    .calSub
+    {
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .resultCal
+    {
+      white-space: nowrap;
+    }
+
+    .nutritionDetails
+    {
+      -webkit-column-count: 3; /* Old Chrome, Safari and Opera */
+      -moz-column-count: 3; /* Old Firefox */
+      column-count: 3;
+      text-align: left;
+      margin: auto;
+      margin-bottom: 4%;
+      padding-left: 3%;
+      padding-right: 3%;
+
+      @media only screen and (min-width: 768px) {
+        max-width: 60%;
+      }
+
+      p
+      {
+        display: inline-block;
+        font-size: 14px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        .nutData
+        {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

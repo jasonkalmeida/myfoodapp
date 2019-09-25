@@ -2,25 +2,12 @@
 
 .loglist
 {
-  >h1, >h2, >h3, >p
+  >h1, >h2
   {
     text-align: center;
   }
 
-  >h3, >p
-  {
-    margin: 0px;
-  }
 
-  >h3
-  {
-    color: $brand-main;
-  }
-
-  >p
-  {
-    font-style: italic;
-  }
 
   >h1
   {
