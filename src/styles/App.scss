@@ -1,0 +1,27 @@
+@import './colors.scss';
+
+body{
+  background-color: $brand-main;
+  margin: 0px;
+}
+
+#root{
+  min-height: 100%;
+
+}
+.App
+{
+  background-color: $brand-white;
+  @import url('https://fonts.googleapis.com/css?family=Raleway:500,600,800&display=swap');
+  font-family: 'Raleway', sans-serif;
+  color: $brand-black;
+
+  max-width: 1024px;
+  margin: auto;
+  padding-top: 2%;
+  min-height: 100%;
+  padding-bottom: 100%;
+
+
+
+}

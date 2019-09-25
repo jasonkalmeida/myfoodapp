@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
 import Search from './Search';
+import './styles/MealList.scss'
 
 function MealList(props){
 
@@ -24,16 +25,16 @@ function MealList(props){
   const items = props.meal;
   const listItems = items.map((item, index) => {
     return(
-      <div key={index}><ItemCard item={item} expanded={false} actionCall={(item) => removeMeal(index)} actionLabel="REMOVE"/></div>
+      <div key={index}><ItemCard item={item} expanded={false} actionStyle="remove" actionCall={(item) => removeMeal(index)} actionLabel="REMOVE"/></div>
     )
   });
 
 
   return (
-    <div className={props.mealName+"List"}>
-      <h2>{props.mealName}</h2>
+    <div className={props.mealName+"List mealList"}>
+      <h2 className="mealHeaderName">{props.mealName}</h2>
       <div>{listItems}
-      <div className="searchControl" onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "x" : "+"}</div>
+      <div className="searchControl" onClick={() => setActiveSearch(!activeSearch)}>{(activeSearch) ? "Close" : "Add"}</div>
       </div>
       {
         activeSearch &&

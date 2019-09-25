@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import LogList from './LogList';
 import Search from './Search';
-import './App.scss';
+import './styles/App.scss';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   //Setting logged in state
   useEffect(() => {
-    var data = require('./userLog.json');
+    var data = require('./data/userLog.json');
     setDate(data["date"]);
     setCalories(data["calories"]);
     setBreakfast(data["breakfast"]);

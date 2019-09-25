@@ -1,0 +1,26 @@
+@import "./colors.scss";
+
+.mealList
+{
+  margin-left: 3%;
+  margin-right: 3%;
+  flex-basis: 0;
+  flex-grow: 1;
+
+
+
+  .mealHeaderName
+  {
+    border-bottom: 2px solid $brand-main;
+    text-transform: uppercase;
+  }
+
+  .searchControl
+  {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: $brand-main;
+  }
+
+}

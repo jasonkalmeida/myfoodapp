@@ -15,6 +15,10 @@ function FoodDatabase(props){
 
     var ret = false;
 
+    if(item["name"].toLowerCase().indexOf(props.search.toLowerCase()) === 0 || (item["name"].toLowerCase().indexOf(props.search.toLowerCase()) >= 0 && item["name"].charAt(item["name"].toLowerCase().indexOf(props.search.toLowerCase())-1) === " ")){
+      ret = true;
+    }
+
     item["name"].split(" ").forEach((word) => {
       if(word.toLowerCase().indexOf(props.search.toLowerCase()) === 0){
         ret = true;
@@ -32,14 +36,14 @@ function FoodDatabase(props){
 
   //This would be ths section where I make API search calls
   useEffect(() => {
-      let res = require('./foodDB.json');
+      let res = require('./data/foodDB.json');
       setSearchResults(res["items"]);
   }, [props.search]);
 
   //This is to re-render the list of items and their props as needed
   useEffect(() => {
     setFoodItems(searchResults.filter(filterSearch).map((item, index) =>
-      <div key={index}><ItemCard item={item} expanded={false} actionCall={(item) => props.addFood(item)} actionLabel="ADD"/></div>
+      <div key={index}><ItemCard item={item} expanded={false} actionStyle="add" actionCall={(item) => props.addFood(item)} actionLabel="ADD"/></div>
     ));
   }, [props.search, searchResults, props.meal])
 
@@ -50,7 +54,7 @@ function FoodDatabase(props){
   } else {
     return(
       <div>{foodItems}
-      <div><CreateCard search={props.search} actionCall={(item) => props.addFood(item)} actionLabel="ADD NEW ITEM" updateSearch={(value) => props.updateSearch(value)}/></div>
+      <div><CreateCard search={props.search} actionStyle="add" actionCall={(item) => props.addFood(item)} actionLabel="ADD NEW ITEM" updateSearch={(value) => props.updateSearch(value)}/></div>
       </div>
     );
   }
