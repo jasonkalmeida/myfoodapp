@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/myfoodapp/static/css/main.c030eec5.chunk.css",
+    "main.js": "/myfoodapp/static/js/main.3bcb6895.chunk.js",
+    "main.js.map": "/myfoodapp/static/js/main.3bcb6895.chunk.js.map",
+    "runtime-main.js": "/myfoodapp/static/js/runtime-main.94dbddd2.js",
+    "runtime-main.js.map": "/myfoodapp/static/js/runtime-main.94dbddd2.js.map",
+    "static/js/2.c38b69c9.chunk.js": "/myfoodapp/static/js/2.c38b69c9.chunk.js",
+    "static/js/2.c38b69c9.chunk.js.map": "/myfoodapp/static/js/2.c38b69c9.chunk.js.map",
+    "index.html": "/myfoodapp/index.html",
+    "precache-manifest.ab4583b5a7636896ae9e2fc98034a876.js": "/myfoodapp/precache-manifest.ab4583b5a7636896ae9e2fc98034a876.js",
+    "service-worker.js": "/myfoodapp/service-worker.js",
+    "static/css/main.c030eec5.chunk.css.map": "/myfoodapp/static/css/main.c030eec5.chunk.css.map"
+  }
+}
