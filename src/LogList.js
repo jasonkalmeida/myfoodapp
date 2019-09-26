@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemCard from './ItemCard';
 import MealList from './MealList';
 import NutritionSummary from './NutritionSummary';
 import './styles/LogList.scss';

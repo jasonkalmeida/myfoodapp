@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import LogList from './LogList';
-import Search from './Search';
 import './styles/App.scss';
 
 

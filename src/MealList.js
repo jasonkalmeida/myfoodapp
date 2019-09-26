@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ItemCard from './ItemCard';
 import Search from './Search';
 import './styles/MealList.scss'
