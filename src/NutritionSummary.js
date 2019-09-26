@@ -3,7 +3,7 @@ import './styles/NutritionSummary.scss';
 
 function NutritionSummary(props){
 
-
+  //Used to toggle-slide the Nutritition Summary section
   function expandSummary(e){
     e.currentTarget.classList.toggle("active");
     var content = e.currentTarget.nextElementSibling

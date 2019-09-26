@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles/ItemCard.scss'
 
-
+//Highly re-usable component to display any food item in this application
 function ItemCard(props){
 
+  //Toggles the nutrition info for the item card
   function expandCard(e){
-    //console.log(e.currentTarget.nextElementSibling);
     e.currentTarget.classList.toggle("active");
     var content = e.currentTarget.nextElementSibling
     if (content.style.maxHeight){
@@ -16,7 +16,7 @@ function ItemCard(props){
   }
 
   return(
-  <div className="itemCard" /*onClick={() => props.actionCall(props.item)}*/>
+  <div className="itemCard">
     <div className="mainCard" onClick={(event) => expandCard(event)}>
       <div className="cardTitle">
         <h3>{props.item["name"]}</h3>

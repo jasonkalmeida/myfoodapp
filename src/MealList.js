@@ -5,6 +5,7 @@ import './styles/MealList.scss'
 
 function MealList(props){
 
+  //This state is used to toggle the search feature for the meal - you can see in the below render, it is a conditional for rendering the Search componenet
   const [activeSearch, setActiveSearch] = useState(false);
 
   //Function to remove a food item to a meal list

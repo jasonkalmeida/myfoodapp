@@ -8,6 +8,8 @@
   {
     color:$brand-white;
     background-color: $brand-dark;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
     width: 200px;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -15,11 +17,17 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
+    
     @media only screen and (max-width: 768px) {
       padding-top: 2%;
       padding-bottom: 2%;
     }
 
+  }
+
+  .nutritionTitle:hover
+  {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
   .active

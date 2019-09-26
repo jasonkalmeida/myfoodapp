@@ -21,7 +21,6 @@ function CreateCard(props){
 
 
   function expandCard(e){
-    //console.log(e.currentTarget.nextElementSibling);
     e.currentTarget.classList.toggle("active");
     var content = e.currentTarget.nextElementSibling
     if (content.style.maxHeight){
@@ -31,9 +30,10 @@ function CreateCard(props){
     }
   }
 
+  //Maps the state to the a JSON object to be added to the food log
   function addNewItem(){
     var newItem = {
-      "name": props.search.charAt(0).toUpperCase() + props.search.substring(1).toLowerCase(),
+      "name": props.search,
       "source": "User Created",
       "nutrition": {
         "calories": calories !== '' ? parseInt(calories) : 0,
@@ -56,9 +56,9 @@ function CreateCard(props){
   }
 
   return(
-  <div className="createCard" /*onClick={() => props.actionCall(props.item)}*/>
+  <div className="createCard">
     <div className="mainCard" onClick={(event) => expandCard(event)}>
-      <p>Create "{props.search.charAt(0).toUpperCase() + props.search.substring(1).toLowerCase()}"</p>
+      <p>Create "{props.search}"</p>
     </div>
     <div className="subCard">
 

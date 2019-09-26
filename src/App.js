@@ -6,6 +6,10 @@ import './styles/App.scss';
 
 function App() {
 
+  //State used to fake data/server reqs
+  const [logInd, setLogInd] = useState(0);
+  const [totalLogs, setTotalLogs] = useState(null);
+
   //Application's overall state
   const [date, setDate] = useState(null);
   const [calories, setCalories] = useState(null);
@@ -14,15 +18,25 @@ function App() {
   const [dinner, setDinner] = useState([]);
   const [nutrition, setNutrition] = useState({});
 
-  //Setting logged in state
+  //Setting the data/server states
   useEffect(() => {
-    var data = require('./data/userLog.json');
+    var input = require('./data/userLog.json');
+    setTotalLogs(input["logs"].length);
+  }, []);
+
+  //Used to application state when user switches to a different day's log
+  useEffect(() => {
+    var input = require('./data/userLog.json');
+    var data = input["logs"][logInd];
     setDate(data["date"]);
     setCalories(data["calories"]);
     setBreakfast(data["breakfast"]);
     setLunch(data["lunch"]);
     setDinner(data["dinner"]);
-  }, []);
+
+  }, [logInd]);
+
+
 
   //When meals are updated, update the calorie count and push updates to DB
   useEffect(() => {
@@ -61,9 +75,10 @@ function App() {
         nutri[key] += item["nutrition"][key];
       }
     })
- 
+
     setNutrition(nutri);
     setCalories(sum);
+
     //Would make POST request here to update user's log in DB
   }, [breakfast, lunch, dinner]);
 
@@ -90,6 +105,9 @@ function App() {
           "dinner": (update) => setDinner(update)
         }}
         nutrition={nutrition}
+        logInd={logInd}
+        changeLog={(update) => setLogInd(update)}
+        totalLogs={totalLogs}
         />
 
 

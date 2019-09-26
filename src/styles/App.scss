@@ -11,16 +11,20 @@ body{
 }
 .App
 {
-  background-color: $brand-white;
   @import url('https://fonts.googleapis.com/css?family=Raleway:500,600,800&display=swap');
+  background-color: $brand-white;
   font-family: 'Raleway', sans-serif;
   color: $brand-black;
-
   max-width: 1024px;
   margin: auto;
   padding-top: 2%;
-  min-height: 100%;
-  padding-bottom: 100%;
+  padding-bottom: 2%;
+  min-height: calc(100vh);
+
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 20%;
+  }
+
 
   #appTitle, #titleSubtext
   {

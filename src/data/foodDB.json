@@ -54,5 +54,23 @@
       "calcium": 25,
       "iron": 25
     }
+  },{
+    "name": "Chargrilled Sandwich",
+    "source": "Chick-Fil-A",
+    "nutrition": {
+      "calories": 310,
+      "totalFat": 4,
+      "cholesterol": 60,
+      "sodium": 830,
+      "potasium": 0,
+      "carbs": 46,
+      "fiber": 4,
+      "sugars": 10,
+      "protein": 29,
+      "vita": 45,
+      "vitc": 15,
+      "calcium": 0,
+      "iron": 20
+    }
   }]
 }

@@ -4,7 +4,7 @@ import CreateCard from './CreateCard';
 
 function FoodDatabase(props){
 
-  //searchResults stores the immediate response of the db
+  //searchResults stores the immediate response of the "db"
   const [searchResults, setSearchResults] = useState([]);
   //foodItems stores the rendered versions of searchResults
   const [foodItems, setFoodItems] = useState([]);

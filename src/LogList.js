@@ -7,8 +7,8 @@ import './styles/LogList.scss';
 function LogList(props){
   return(
     <div className="loglist">
-      <h1>{props.date}</h1>
-
+      <h1 id="logDate">{props.date}</h1>
+      <h1 id="logChange"><span className="logChange" onClick={() => props.changeLog(props.logInd+1)}>{(props.logInd < props.totalLogs-1) ? "← " : ""}</span>  <span className="logChange" onClick={() => props.changeLog(props.logInd-1)}>{(props.logInd > 0) ? " →" : ""}</span></h1>
       <NutritionSummary nutrition={props.nutrition} calories={props.calories} />
 
       <div className="mealsSection">

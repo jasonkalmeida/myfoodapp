@@ -62,8 +62,6 @@
   .subCard
   {
     background-color: white;
-    z-index: 8;
-    position:relative;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -74,13 +72,15 @@
     border-bottom-right-radius: 10px;
     width: 80%;
     margin: auto;
+    z-index: 8;
+    position:relative;
 
 
     .nutritionSection
     {
       padding-top: 5%;
-      -webkit-column-count: 2; /* Old Chrome, Safari and Opera */
-      -moz-column-count: 2; /* Old Firefox */
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
       column-count: 2;
     }
     p
@@ -117,18 +117,6 @@
         color: $brand-alert;
       }
 
-    }
-
-
-
-    .addCard:hover
-    {
-      background-color:white;
-
-      p
-      {
-        color:blue;
-      }
     }
 
   }
