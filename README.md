@@ -1,4 +1,4 @@
-### MyFoodApp
+# MyFoodApp
 
 A simple React site for food & nutrition logging.
 
