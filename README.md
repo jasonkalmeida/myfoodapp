@@ -1,3 +1,7 @@
+### MyFoodApp
+
+A simple React site for food & nutrition logging.
+
 ## Built With
 
 `node v12.4.0`
